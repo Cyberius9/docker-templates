@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<Container version="2">
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
     <Date>2021-02-07</Date>
     <Beta>False</Beta>
     <Repository>traefik</Repository>
@@ -120,4 +120,4 @@
     <Config Type="Label" Name="traefik.http.routers.traefik.service" Target="traefik.http.routers.traefik.service" Default="api@internal" Mode="" Description="traefik.http.routers.traefik.service" Display="advanced" Required="true" Mask="false">api@internal</Config>
     <Config Type="Label" Name="traefik.http.routers.traefik.middlewares" Target="traefik.http.routers.traefik.middlewares" Default="" Mode="" Description="traefik.http.routers.traefik.middlewares" Display="always" Required="true" Mask="false">secured@file</Config>
     <Config Type="Label" Name="traefik.http.services.traefik.loadbalancer.server.Port" Target="traefik.http.services.traefik.loadbalancer.server.Port" Default="8080" Mode="" Description="traefik.http.services.traefik.loadbalancer.server.Port" Display="advanced" Required="true" Mask="false">8080</Config>
-</Container> 
+</Containers> 
