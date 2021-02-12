@@ -104,4 +104,20 @@
             <Mode/>
         </Label>
     </Labels>
+    <Config Type="Port" Name="Web Interface Port" Target="8080" Default="8080" Mode="tcp" Display="always" Required="true" Description="This is Web UI port you can access via a web browser.">8080</Config>
+    <Config Type="Port" Name="HTTP Port" Target="80" Default="80" Mode="tcp" Display="always" Required="true" Description="HTTP Entry Port">80</Config>
+    <Config Type="Port" Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Display="always" Required="true" Description="HTTPS Entry Port">443</Config>
+
+    <Config Type="Path" Name="Config Storage Path" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Display="always" Required="true" Description="Traefik Config Path">/mnt/user/appdata/traefik</Config>
+    <Config Type="Path" Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to docker socket" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+
+    <Config Type="Variable" Name="CF_API_EMAIL" Target="CF_API_EMAIL" Default="" Mode="" Description="Container Variable: CF_API_EMAIL Cloudflare API Email adress" Display="always" Required="true" Mask="false"></Config>
+    <Config Type="Variable" Name="CF_API_KEY" Target="CF_API_KEY" Default="" Mode="" Description="Container Variable: CF_API_KEY Cloudflaer API Key" Display="always" Required="true" Mask="false"></Config>
+
+    <Config Type="Label" Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="traefik.enable" Display="always" Required="true" Mask="false">true</Config>
+    <Config Type="Label" Name="traefik.http.routers.traefik.entrypoints" Target="traefik.http.routers.traefik.entrypoints" Default="https" Mode="" Description="traefik.http.routers.traefik.entrypoints" Display="always" Required="true" Mask="false">https</Config>
+    <Config Type="Label" Name="traefik.http.routers.traefik.rule" Target="traefik.http.routers.traefik.rule" Default="" Mode="" Description="traefik.http.routers.traefik.rule" Display="always" Required="true" Mask="false">Host(`traefik.example.com`)</Config>
+    <Config Type="Label" Name="traefik.http.routers.traefik.service" Target="traefik.http.routers.traefik.service" Default="api@internal" Mode="" Description="traefik.http.routers.traefik.service" Display="advanced" Required="true" Mask="false">api@internal</Config>
+    <Config Type="Label" Name="traefik.http.routers.traefik.middlewares" Target="traefik.http.routers.traefik.middlewares" Default="" Mode="" Description="traefik.http.routers.traefik.middlewares" Display="always" Required="true" Mask="false">secured@file</Config>
+    <Config Type="Label" Name="traefik.http.services.traefik.loadbalancer.server.Port" Target="traefik.http.services.traefik.loadbalancer.server.Port" Default="8080" Mode="" Description="traefik.http.services.traefik.loadbalancer.server.Port" Display="advanced" Required="true" Mask="false">8080</Config>
 </Container> 
