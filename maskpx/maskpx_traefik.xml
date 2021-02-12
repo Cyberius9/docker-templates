@@ -49,7 +49,7 @@
                 <Protocol>tcp</Protocol>
             </Port>
             <Port>
-                <HostPort>8080</HostPort>
+                <HostPort>8090</HostPort>
                 <ContainerPort>8080</ContainerPort>
                 <Protocol>tcp</Protocol>
             </Port>
@@ -79,7 +79,7 @@
     </Environment>
     <Labels>
         <Label>
-            <Value>true</Value>
+            <Value>true|false</Value>
             <Name>traefik.enable</Name>
             <Mode/>
         </Label>
