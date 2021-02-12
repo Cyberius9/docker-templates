@@ -3,7 +3,7 @@
     <Date>2021-02-07</Date>
     <Beta>False</Beta>
     <Repository>traefik</Repository>
-    <Registry>https://registry.hub.docker.com/_/traefik<Registry/>
+    <Registry>https://registry.hub.docker.com/_/traefik</Registry>
     <Name>Traefik2</Name>
     <Branch>
         <Tag>latest</Tag>
