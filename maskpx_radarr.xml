@@ -14,7 +14,7 @@
     </Overview>
     <Category>Downloaders: MediaApp:Video</Category>
     <WebUI>http://[IP]:[PORT:7878]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/radarr.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_radarr.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/radarr-icon.png</Icon>
     <ExtraParams/>
     <PostArgs/>

@@ -14,7 +14,7 @@
     </Overview>
     <Category>Downloaders: MediaApp:Music</Category>
     <WebUI>http://[IP]:[PORT:8686]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/lidarr.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_lidarr.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/lidarr-icon.png</Icon>
     <ExtraParams/>
     <PostArgs/>

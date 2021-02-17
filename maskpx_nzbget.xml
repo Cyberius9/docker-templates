@@ -14,7 +14,7 @@
     </Overview>
     <Category>Downloaders:</Category>
     <WebUI>http://[IP]:[PORT:6789]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/nzbget.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_nzbget.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/nzbget-icon.png</Icon>
     <ExtraParams/>
     <PostArgs/>

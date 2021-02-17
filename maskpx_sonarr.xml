@@ -14,7 +14,7 @@
     </Overview>
     <Category>Downloaders: MediaApp:Video</Category>
     <WebUI>http://[IP]:[PORT:8989]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/sonarr.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_sonarr.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/sonarr-icon.png</Icon>
     <ExtraParams/>
     <PostArgs/>
