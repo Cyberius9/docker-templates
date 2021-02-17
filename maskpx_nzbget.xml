@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>nzbget</Name>
+    <Repository>binhex/arch-nzbget</Repository>
+    <Registry>https://registry.hub.docker.com/r/binhex/arch-nzbget/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>http://lime-technology.com/forum/index.php?topic=45843.0</Support>
+    <Project>http://nzbget.net/</Project>
+    <Overview>&#xD;
+    NZBGet is a cross-platform binary newsgrabber for nzb files, written in C++. It supports client/server mode, automatic par-check/-repair, web-interface, command-line interface, etc. NZBGet requires low system resources and runs great on routers, NAS-devices and media players.&#xD;
+    </Overview>
+    <Category>Downloaders:</Category>
+    <WebUI>http://[IP]:[PORT:6789]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/nzbget.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/nzbget-icon.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled>1613588286</DateInstalled>
+    <DonateText>If you appreciate my work, then please consider buying me a beer :D</DonateText>
+    <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=MM5E27UX6AUU4</DonateLink>
+    <Description>&#xD;
+    NZBGet is a cross-platform binary newsgrabber for nzb files, written in C++. It supports client/server mode, automatic par-check/-repair, web-interface, command-line interface, etc. NZBGet requires low system resources and runs great on routers, NAS-devices and media players.&#xD;
+    </Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>6789</HostPort>
+                <ContainerPort>6789</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Config Name="Host Port 1" Target="6789" Default="6789" Mode="tcp" Description="Container Port: 6789" Type="Port" Display="always" Required="true" Mask="false">6789</Config>
+    <Config Name="Host Path 2" Target="/data" Default="/mnt/user/appdata/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/data</Config>
+    <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+    <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="media" Target="/media" Default="" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.nzbget.rule" Target="traefik.http.routers.nzbget.rule" Default="Host(`nzbget.example.com`)" Mode="" Description="Container Label: traefik.http.routers.nzbget.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.services.nzbget.loadbalancer.server.port" Target="traefik.http.services.nzbget.loadbalancer.server.port" Default="6789" Mode="" Description="Container Label: traefik.http.services.nzbget.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">6789</Config>
+    <Config Name="traefik.http.routers.nzbget.middlewares" Target="traefik.http.routers.nzbget.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.nzbget.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.routers.nzbget.entrypoints" Target="traefik.http.routers.nzbget.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.nzbget.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-nzbget" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-nzbget</Config>
+</Container>
