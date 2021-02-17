@@ -10,6 +10,7 @@
     <Support/>
     <Project/>
     <Overview>Companion App for Cloudflare to dynamically update cnames</Overview>
+    <Category>Network:Web Network:Proxy</Category>
     <Description>Companion App for Cloudflare to dynamically update cnames</Description>
     <Networking>
         <Mode>bridge</Mode>
