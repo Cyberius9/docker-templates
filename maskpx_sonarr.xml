@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>sonarr</Name>
+    <Repository>binhex/arch-sonarr</Repository>
+    <Registry>https://registry.hub.docker.com/r/binhex/arch-sonarr/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>http://lime-technology.com/forum/index.php?topic=45848.0</Support>
+    <Project>https://sonarr.tv/</Project>
+    <Overview>&#xD;
+    Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.&#xD;
+    </Overview>
+    <Category>Downloaders: MediaApp:Video</Category>
+    <WebUI>http://[IP]:[PORT:8989]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/sonarr.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/sonarr-icon.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled>1613592357</DateInstalled>
+    <DonateText>If you appreciate my work, then please consider buying me a beer :D</DonateText>
+    <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=MM5E27UX6AUU4</DonateLink>
+    <Description>&#xD;
+    Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.&#xD;
+    </Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8989</HostPort>
+                <ContainerPort>8989</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>9897</HostPort>
+                <ContainerPort>9897</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Config Name="Host Port 1" Target="8989" Default="8989" Mode="tcp" Description="Container Port: 8989" Type="Port" Display="always" Required="true" Mask="false">8989</Config>
+    <Config Name="Host Port 2" Target="9897" Default="9897" Mode="tcp" Description="Container Port: 9897" Type="Port" Display="always" Required="true" Mask="false">9897</Config>
+    <Config Name="Host Path 2" Target="/data" Default="/mnt/user/appdata/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/data</Config>
+    <Config Name="Host Path 3" Target="/media" Default="/mnt/user" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false">/mnt/user</Config>
+    <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+    <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.sonarr.rule" Target="traefik.http.routers.sonarr.rule" Default="Host(`sonarr.example.com`)" Mode="" Description="Container Label: traefik.http.routers.sonarr.rule=" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.sonarr.middlewares" Target="traefik.http.routers.sonarr.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.sonarr.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.services.sonarr.loadbalancer.server.Port" Target="traefik.http.services.sonarr.loadbalancer.server.Port" Default="8989" Mode="" Description="Container Label: traefik.http.services.sonarr.loadbalancer.server.Port" Type="Label" Display="always" Required="true" Mask="false">8989</Config>
+    <Config Name="traefik.http.routers.sonarr.entrypoints" Target="traefik.http.routers.sonarr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.sonarr.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-sonarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-sonarr</Config>
+</Container>
