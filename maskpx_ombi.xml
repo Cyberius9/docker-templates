@@ -4,7 +4,6 @@
     <Repository>linuxserver/ombi</Repository>
     <Registry>https://hub.docker.com/r/linuxserver/ombi/</Registry>
     <Network>bridge</Network>
-    <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
     <Support>https://forums.unraid.net/topic/53520-support-linuxserverio-ombi/</Support>
@@ -14,10 +13,6 @@
     <WebUI>http://[IP]:[PORT:3579]/</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/ombi.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png</Icon>
-    <ExtraParams/>
-    <PostArgs/>
-    <CPUset/>
-    <DateInstalled>1613585206</DateInstalled>
     <DonateText>Donations</DonateText>
     <DonateLink>https://www.linuxserver.io/donate</DonateLink>
     <Description>Ombi allows you to host your own Plex Request and user management system.</Description>
@@ -31,26 +26,6 @@
             </Port>
         </Publish>
     </Networking>
-    <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/ombi</HostDir>
-            <ContainerDir>/config</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-    </Data>
-    <Environment>
-        <Variable>
-            <Value>99</Value>
-            <Name>PUID</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>100</Value>
-            <Name>PGID</Name>
-            <Mode/>
-        </Variable>
-    </Environment>
-    <Labels/>
     <Config Name="Host Port 1" Target="3579" Default="3579" Mode="tcp" Description="Container Port: 3579" Type="Port" Display="always" Required="true" Mask="false">3579</Config>
     <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
     <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>

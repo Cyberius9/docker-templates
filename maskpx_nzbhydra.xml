@@ -14,10 +14,6 @@
     <WebUI>http://[IP]:[PORT:5076]/</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/nzbhydra2.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/nzbhydra2-icon.png</Icon>
-    <ExtraParams/>
-    <PostArgs/>
-    <CPUset/>
-    <DateInstalled>1613581457</DateInstalled>
     <DonateText>If you appreciate my work, then please consider buying me a beer :D</DonateText>
     <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=MM5E27UX6AUU4</DonateLink>
     <Description>NZBHydra2 is a meta search for NZB indexers. It provides easy access to a number of raw and newznab based indexers. You can search all your indexers from one place and use it as indexer source for tools like Sonarr or CouchPotato.</Description>
@@ -31,36 +27,6 @@
             </Port>
         </Publish>
     </Networking>
-    <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/data</HostDir>
-            <ContainerDir>/data</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-        <Volume>
-            <HostDir>/mnt/user/appdata/binhex-nzbhydra2</HostDir>
-            <ContainerDir>/config</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-    </Data>
-    <Environment>
-        <Variable>
-            <Value>000</Value>
-            <Name>UMASK</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>99</Value>
-            <Name>PUID</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>100</Value>
-            <Name>PGID</Name>
-            <Mode/>
-        </Variable>
-    </Environment>
-    <Labels/>
     <Config Name="Host Port 1" Target="5076" Default="5076" Mode="tcp" Description="Container Port: 5076" Type="Port" Display="always" Required="true" Mask="false">5076</Config>
     <Config Name="Host Path 2" Target="/data" Default="/mnt/user/appdata/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/data</Config>
     <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
