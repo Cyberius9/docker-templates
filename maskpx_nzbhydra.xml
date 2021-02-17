@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>binhex-nzbhydra2</Name>
+    <Name>nzbhydra2</Name>
     <Repository>binhex/arch-nzbhydra2</Repository>
     <Registry>https://registry.hub.docker.com/r/binhex/arch-nzbhydra2/</Registry>
     <Network>bridge</Network>
