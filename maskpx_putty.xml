@@ -56,11 +56,15 @@
             </Port>
         </Publish>
     </Networking>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="Host" Target="traefik.http.routers.putty.rule" Default="Host(`putty.example.com`)" Mode="" Description="Container Label: traefik.http.routers.putty.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
     <Config Name="Loadbalancer Port" Target="traefik.http.services.putty.loadbalancer.server.port" Default="7816" Mode="" Description="Container Label: traefik.http.services.putty.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">7816</Config>
-    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="traefik.http.routers.putty.middlewares" Target="traefik.http.routers.putty.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.putty.middlewares:" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
     <Config Name="traefik.http.routers.putty.entrypoints" Target="traefik.http.routers.putty.entrypoints" Default="https" Mode="" Description="Entry Point (http,https)" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+    <Config Name="Host" Target="traefik.http.routers.puttyvnc.rule" Default="Host(`puttyvnc.example.com`)" Mode="" Description="Container Label: traefik.http.routers.puttyvnc.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="Loadbalancer Port" Target="traefik.http.services.puttyvnc.loadbalancer.server.port" Default="7916" Mode="" Description="Container Label: traefik.http.services.puttyvnc.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">7916</Config>
+    <Config Name="traefik.http.routers.puttyvnc.middlewares" Target="traefik.http.routers.puttyvnc.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.puttyvnc.middlewares:" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.routers.puttyvnc.entrypoints" Target="traefik.http.routers.puttyvnc.entrypoints" Default="https" Mode="" Description="Entry Point (http,https)" Type="Label" Display="always" Required="true" Mask="false">https</Config>
     <Config Name="Config Directory" Target="/config" Default="/mnt/user/appdata/putty" Mode="rw" Description="This is where the application stores its configuration, log and any files needing persistency.&amp;lt;br&amp;gt;Container path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/PuTTY</Config>
     <Config Name="User ID" Target="USER_ID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
     <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
