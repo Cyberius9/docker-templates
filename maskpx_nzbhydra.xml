@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>binhex-nzbhydra2</Name>
+    <Repository>binhex/arch-nzbhydra2</Repository>
+    <Registry>https://registry.hub.docker.com/r/binhex/arch-nzbhydra2/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://lime-technology.com/forums/topic/64638-support-binhex-nzbhydra2/</Support>
+    <Project>https://github.com/theotherp/nzbhydra2</Project>
+    <Overview>NZBHydra2 is a meta search for NZB indexers. It provides easy access to a number of raw and newznab based indexers. You can search all your indexers from one place and use it as indexer source for tools like Sonarr or CouchPotato.</Overview>
+    <Category>Downloaders: MediaApp:Video</Category>
+    <WebUI>http://[IP]:[PORT:5076]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/nzbhydra2.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/nzbhydra2-icon.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled>1613581457</DateInstalled>
+    <DonateText>If you appreciate my work, then please consider buying me a beer :D</DonateText>
+    <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=MM5E27UX6AUU4</DonateLink>
+    <Description>NZBHydra2 is a meta search for NZB indexers. It provides easy access to a number of raw and newznab based indexers. You can search all your indexers from one place and use it as indexer source for tools like Sonarr or CouchPotato.</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>5076</HostPort>
+                <ContainerPort>5076</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/data</HostDir>
+            <ContainerDir>/data</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/mnt/user/appdata/binhex-nzbhydra2</HostDir>
+            <ContainerDir>/config</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Value>000</Value>
+            <Name>UMASK</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value>99</Value>
+            <Name>PUID</Name>
+            <Mode/>
+        </Variable>
+        <Variable>
+            <Value>100</Value>
+            <Name>PGID</Name>
+            <Mode/>
+        </Variable>
+    </Environment>
+    <Labels/>
+    <Config Name="Host Port 1" Target="5076" Default="5076" Mode="tcp" Description="Container Port: 5076" Type="Port" Display="always" Required="true" Mask="false">5076</Config>
+    <Config Name="Host Path 2" Target="/data" Default="/mnt/user/appdata/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/data</Config>
+    <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+    <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true|false" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.nzbhydra.rule" Target="traefik.http.routers.nzbhydra.rule" Default="Host(`nzbhydra.example.com`)" Mode="" Description="Container Label: traefik.http.routers.nzbhydra.rule" Type="Label" Display="always" Required="true" Mask="false">Host(`nzbhydra.maskpx.com`)</Config>
+    <Config Name="traefik.http.services.nzbhydra.loadbalancer.server.port" Target="traefik.http.services.nzbhydra.loadbalancer.server.port" Default="5076" Mode="" Description="Container Label: traefik.http.services.nzbhydra.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">5076</Config>
+    <Config Name="traefik.http.routers.nzbhydra.middlewares" Target="traefik.http.routers.nzbhydra.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.nzbhydra.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.routers.nzbhydra.entrypoints" Target="traefik.http.routers.nzbhydra.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.nzbhydra.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-nzbhydra2" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-nzbhydra2</Config>
+</Container>
