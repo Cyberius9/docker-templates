@@ -1,1 +1,1 @@
-# This repository was specially adapted for Cyberius needs
+# This repository was specially adapted for Cyberius
