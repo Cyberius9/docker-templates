@@ -7,13 +7,13 @@
     <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
-    <Support>https://github.com/Zeropointer11/unraid_docker_templates/issues</Support>
+    <Support>https://github.com/Zeropointer11/</Support>
     <Project/>
     <Overview>Traefik is a modern reverse-proxy.</Overview>
     <Category>Network:Web, Network:Proxy</Category>
     <WebUI>http://[IP]:[PORT:8090]</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_traefik.xml</TemplateURL>
-    <Icon>https://raw.githubusercontent.com/Zeropointer11/docker-templates/master/images/traefik.png</Icon>
+    <TemplateURL>https://github.com/Cyberius9/docker-templates/blob/master/cyberius_traefik.xml</TemplateURL>
+    <Icon>https://github.com/Cyberius9/docker-templates/blob/master/img/traefik.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
