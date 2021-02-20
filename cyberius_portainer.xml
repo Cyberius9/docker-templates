@@ -15,7 +15,7 @@
     <Category>Docker:</Category>
     <WebUI>http://[IP]:[PORT:9000]/</WebUI>
     <TemplateURL>https://github.com/Cyberius9/docker-templates/blob/master/cyberius_portainer.xml</TemplateURL>
-    <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+    <Icon>https://github.com/juusujanar/unraid-templates/raw/master/img/Portainer-logo.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
