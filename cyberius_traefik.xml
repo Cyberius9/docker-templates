@@ -11,7 +11,7 @@
     <Project/>
     <Overview>Traefik is a modern reverse-proxy.</Overview>
     <Category>Network:Web, Network:Proxy</Category>
-    <WebUI>http://[IP]:[PORT:8090]</WebUI>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
     <TemplateURL>https://github.com/Cyberius9/docker-templates/blob/master/cyberius_traefik.xml</TemplateURL>
     <Icon>https://github.com/Cyberius9/docker-templates/blob/master/img/traefik.png</Icon>
     <ExtraParams/>
@@ -49,8 +49,8 @@
     <Config Name="Timezone" Target="TZ" Default="Europe/Vienna" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Vienna</Config>
     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-    <Config Name="CF_API_EMAIL" Target="CF_API_EMAIL" Default="example@gmail.com" Mode="" Description="Container Variable: CF_API_EMAIL Cloudflare API Email adress" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-    <Config Name="CF_API_KEY" Target="CF_API_KEY" Default="" Mode="" Description="Container Variable: CF_API_KEY Cloudflaer API Key" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="CF_API_EMAIL_FILE" Target="CF_API_EMAIL_FILE" Default="" Mode="" Description="Path to the Cloudflare API email address as a Docker secret named traefik_cf-api-email" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="CF_API_KEY_FILE" Target="CF_API_KEY_FILE" Default="" Mode="" Description="Path to the Cloudflare API key address as a Docker secret named traefik_cf-api-key" Type="Variable" Display="always" Required="true" Mask="false"></Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="traefik.http.routers.traefik.entrypoints" Target="traefik.http.routers.traefik.entrypoints" Default="https" Mode="" Description="traefik.http.routers.traefik.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
     <Config Name="traefik.http.routers.traefik.rule" Target="traefik.http.routers.traefik.rule" Default="Host(`traefik.example.com`)" Mode="" Description="traefik.http.routers.traefik.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
