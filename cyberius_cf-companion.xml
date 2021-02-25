@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>cf-companion</Name>
+    <Name>CF-Companion</Name>
     <Repository>tiredofit/traefik-cloudflare-companion:latest</Repository>
     <Registry/>
     <Network>bridge</Network>
@@ -11,7 +11,7 @@
     <Project/>
     <Overview>Companion App for Cloudflare to dynamically update cnames</Overview>
     <Category>Network:Web Network:Proxy</Category>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_cf-companion.xml</TemplateURL>
+    <TemplateURL>https://github.com/Cyberius9/docker-templates/blob/master/cyberius_cf-companion.xml</TemplateURL>
     <Description>Companion App for Cloudflare to dynamically update cnames</Description>
     <Networking>
         <Mode>bridge</Mode>
