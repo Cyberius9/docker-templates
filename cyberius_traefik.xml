@@ -30,20 +30,20 @@
                 <Protocol>tcp</Protocol>
             </Port>
             <Port>
-                <HostPort>81</HostPort>
+                <HostPort>80</HostPort>
                 <ContainerPort>80</ContainerPort>
                 <Protocol>tcp</Protocol>
             </Port>
             <Port>
-                <HostPort>444</HostPort>
+                <HostPort>443</HostPort>
                 <ContainerPort>443</ContainerPort>
                 <Protocol>tcp</Protocol>
             </Port>
         </Publish>
     </Networking>
     <Config Name="Web Interface Port" Target="8080" Default="8080" Mode="tcp" Description="This is Web UI port you can access via a web browser." Type="Port" Display="always" Required="true" Mask="{8}">8080</Config>
-    <Config Name="HTTP Port" Target="81" Default="81" Mode="tcp" Description="HTTP Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">81</Config>
-    <Config Name="HTTPS Port" Target="444" Default="444" Mode="tcp" Description="HTTPS Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">444</Config>
+    <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="HTTP Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">80</Config>
+    <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">443</Config>
     <Config Name="Config Storage Path" Target="/etc/traefik" Default="/mnt/user/appdata/traefik/" Mode="rw" Description="Traefik Config Path" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/traefik/</Config>
     <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to docker socket" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
     <Config Name="Timezone" Target="TZ" Default="Europe/Vienna" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Vienna</Config>
