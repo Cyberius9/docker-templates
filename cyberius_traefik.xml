@@ -45,6 +45,7 @@
     <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="HTTP Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">80</Config>
     <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">443</Config>
     <Config Name="Config Storage Path" Target="/etc/traefik" Default="/mnt/user/appdata/traefik/" Mode="rw" Description="Traefik Config Path" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/traefik/</Config>
+    <Config Name="Secrets Storage Path" Target="/secrets" Default="/mnt/user/secrets/traefik/" Mode="ro" Description="Traefik Secrets Path" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/secrets/traefik/</Config>
     <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to docker socket" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
     <Config Name="Timezone" Target="TZ" Default="Europe/Vienna" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Vienna</Config>
     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
