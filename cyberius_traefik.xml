@@ -12,8 +12,8 @@
     <Overview>Traefik is a modern reverse-proxy.</Overview>
     <Category>Network:Web, Network:Proxy</Category>
     <WebUI>http://[IP]:[PORT:8080]</WebUI>
-    <TemplateURL>https://github.com/Cyberius9/docker-templates/blob/master/cyberius_traefik.xml</TemplateURL>
-    <Icon>https://github.com/Cyberius9/docker-templates/blob/master/img/traefik.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/Cyberius9/docker-templates/master/cyberius_traefik.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/Cyberius9/docker-templates/master/img/traefik.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
