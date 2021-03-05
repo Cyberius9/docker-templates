@@ -12,7 +12,7 @@
     <Overview>Authelia Auth service</Overview>
     <Category>Network:Web, Network:Auth</Category>
     <WebUI>http://[IP]:[PORT:9091]</WebUI>
-    <TemplateURL>https://github.com/Cyberius9/docker-templates/blob/master/cyberius_authelia.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/ibracorp/unraid-templates/master/authelia/authelia.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/maskpx/docker-templates/master/images/authelia.png</Icon>
     <Description>Authelia Auth service</Description>
     <Networking>
