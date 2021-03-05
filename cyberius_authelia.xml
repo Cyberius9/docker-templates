@@ -27,6 +27,7 @@
     </Networking>
     <Config Name="Web Interface Port" Target="9091" Default="9091" Mode="tcp" Description="This is Web UI port you can access via a web browser." Type="Port" Display="always" Required="true" Mask="{8}">9091</Config>
     <Config Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/authelia" Mode="rw" Description="Authelia Config Path /config" Type="Path" Display="always" Required="true" Mask="{8}">/mnt/user/appdata/authelia</Config>
+    <Config Name="Secrets Storage Path" Target="/secrets" Default="/mnt/user/secrets/authelia" Mode="ro" Description="Authelia Secrets Path /secrets" Type="Path" Display="always" Required="true" Mask="{8}">/mnt/user/secrets/authelia</Config>
     <Config Name="Timezone" Target="TZ" Default="Europe/Vienna" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Vienna</Config>
     <Config Name="AUTHELIA_JWT_SECRET_FILE" Target="AUTHELIA_JWT_SECRET_FILE" Default="" Mode="" Description="Path to the JWT Secrets file" Type="Variable" Display="always" Required="true" Mask="false"></Config>
     <Config Name="AUTHELIA_SESSION_SECRET_FILE" Target="AUTHELIA_SESSION_SECRET_FILE" Default="" Mode="" Description="Path to the Session Secret file" Type="Variable" Display="always" Required="true" Mask="false"></Config>
