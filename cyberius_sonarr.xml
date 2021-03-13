@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Sonarr</Name>
-  <Repository>linuxserver/sonarr:preview</Repository>
+  <Repository>linuxserver/sonarr</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/sonarr/</Registry>
   <Network>bridge</Network>
   <MyIP/>
