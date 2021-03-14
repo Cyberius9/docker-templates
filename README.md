@@ -1,1 +1,3 @@
-# This repository was specially adapted for Cyberius
+# Docker Templates for Unraid.
+
+# These templates can be added manually as containers.
