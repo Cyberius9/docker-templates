@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Plex-Media-Server</Name>
+    <Repository>plexinc/pms-docker</Repository>
+    <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
+    <Network>host</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.plex.tv/</Support>
+    <Project>https://plex.tv/</Project>
+    <Overview>Plex Media Server&#xD;
+   &#xD;
+  Enjoy your media on all your devices.&#xD;
+  All your movie, TV Show, music, and photo collections at your fingertips, anywhere you go on all the devices you love.</Overview>
+    <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
+    <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/plexinc/pms-docker/master/plex-unRAID.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/plexinc/pms-docker/master/img/plex-server.png</Icon>
+    <Config Name="Host Path 2" Target="/transcode" Default="" Mode="rw" Description="Container Path: /transcode" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Host Path 3" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Plex Token" Target="PLEX_CLAIM" Default="Insert Token from https://plex.tv/claim" Mode="" Description="Container Variable: PLEX_CLAIM" Type="Variable" Display="always" Required="false" Mask="false">Insert Token from https://plex.tv/claim</Config>
+    <Config Name="PUID" Target="PLEX_UID" Default="99" Mode="" Description="Container Variable: PLEX_UID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PLEX_GID" Default="100" Mode="" Description="Container Variable: PLEX_GID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="Version" Target="VERSION" Default="latest" Mode="" Description="Container Variable: VERSION" Type="Variable" Display="always" Required="false" Mask="false">latest</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.plex.entrypoints" Target="traefik.http.routers.plex.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.plex.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+    <Config Name="traefik.http.routers.plex.rule" Target="traefik.http.routers.plex.rule" Default="Host(`plex.example.com`)" Mode="" Description="Container Label: traefik.http.routers.plex.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.plex.middlewares" Target="traefik.http.routers.plex.middlewares" Default="secHeaders@file" Mode="" Description="Container Label: traefik.http.routers.plex.middlewares" Type="Label" Display="always" Required="true" Mask="false">secHeaders@file</Config>
+    <Config Name="traefik.http.services.plex.loadbalancer.server.port" Target="traefik.http.services.plex.loadbalancer.server.port" Default="32400" Mode="" Description="Container Label: traefik.http.services.plex.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">32400</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/plex" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plex</Config>
+</Container>
