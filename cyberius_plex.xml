@@ -1,31 +1,41 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>Plex-Media-Server</Name>
-    <Repository>plexinc/pms-docker</Repository>
-    <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
+    <Name>Plex</Name>
+    <Repository>linuxserver/plex</Repository>
+    <Registry>https://hub.docker.com/r/linuxserver/plex/</Registry>
     <Network>host</Network>
-    <Shell>sh</Shell>
+    <MyIP/>
+    <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://forums.plex.tv/</Support>
-    <Project>https://plex.tv/</Project>
-    <Overview>Plex Media Server&#xD;
-   &#xD;
-  Enjoy your media on all your devices.&#xD;
-  All your movie, TV Show, music, and photo collections at your fingertips, anywhere you go on all the devices you love.</Overview>
+    <Support>https://forums.unraid.net/topic/40463-support-linuxserverio-plex-media-server/</Support>
+    <Project>https://www.plex.tv/</Project>
+    <Overview>Plex organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices.[br][br][b][u][span style='color: #E80000;']Nvidia GPU Use[/span][/u][/b][br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b][br][br][b][u][span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot, then [br]add [b]--device=/dev/dri[/b] to [b]"extra parameters"[/b] (switch on advanced view)</Overview>
     <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
     <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/plexinc/pms-docker/master/plex-unRAID.xml</TemplateURL>
-    <Icon>https://raw.githubusercontent.com/plexinc/pms-docker/master/img/plex-server.png</Icon>
-    <Config Name="Host Path 2" Target="/transcode" Default="" Mode="rw" Description="Container Path: /transcode" Type="Path" Display="always" Required="true" Mask="false"/>
-    <Config Name="Host Path 3" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false"/>
-    <Config Name="Plex Token" Target="PLEX_CLAIM" Default="Insert Token from https://plex.tv/claim" Mode="" Description="Container Variable: PLEX_CLAIM" Type="Variable" Display="always" Required="false" Mask="false">Insert Token from https://plex.tv/claim</Config>
-    <Config Name="PUID" Target="PLEX_UID" Default="99" Mode="" Description="Container Variable: PLEX_UID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
-    <Config Name="PGID" Target="PLEX_GID" Default="100" Mode="" Description="Container Variable: PLEX_GID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-    <Config Name="Version" Target="VERSION" Default="latest" Mode="" Description="Container Variable: VERSION" Type="Variable" Display="always" Required="false" Mask="false">latest</Config>
+    <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/plex.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-icon.png</Icon>
+    <Config Name="VERSION" Target="VERSION" Default="" Mode="" Description="VERSION" Type="Variable" Display="always" Required="false" Mask="false">docker</Config>
+    <Config Name="Movies" Target="/movies" Default="" Mode="rw" Description="Movies - /movies" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="TV" Target="/tv" Default="" Mode="rw" Description="TV - /tv" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Music" Target="/music" Default="" Mode="rw" Description="Music - /music" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Videos" Target="/videos" Default="" Mode="rw" Description="Videos - /videos" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Transcode" Target="/transcode" Default="" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false"></Config>
     <Config Name="traefik.http.routers.plex.entrypoints" Target="traefik.http.routers.plex.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.plex.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
     <Config Name="traefik.http.routers.plex.rule" Target="traefik.http.routers.plex.rule" Default="Host(`plex.example.com`)" Mode="" Description="Container Label: traefik.http.routers.plex.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
     <Config Name="traefik.http.routers.plex.middlewares" Target="traefik.http.routers.plex.middlewares" Default="secHeaders@file" Mode="" Description="Container Label: traefik.http.routers.plex.middlewares" Type="Label" Display="always" Required="true" Mask="false">secHeaders@file</Config>
     <Config Name="traefik.http.services.plex.loadbalancer.server.port" Target="traefik.http.services.plex.loadbalancer.server.port" Default="32400" Mode="" Description="Container Label: traefik.http.services.plex.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">32400</Config>
-    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/plex" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plex</Config>
+    <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/plex" Mode="rw" Description="Appdata" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/plex</Config>
+    <Config Name="Webui" Target="32400" Default="32400" Mode="tcp" Description="For access to the Plex Media Server Webui (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32400</Config>
+    <Config Name="Plex Companion" Target="3005" Default="3005" Mode="tcp" Description="For controlling Plex Home Theater via Plex Companion (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">3005</Config>
+    <Config Name="Roku via Plex Companion" Target="8324" Default="8324" Mode="tcp" Description="For controlling Plex for Roku via Plex Companion (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">8324</Config>
+    <Config Name="Plex DLNA Server" Target="32469" Default="32469" Mode="tcp" Description="For access to the Plex DLNA Server (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32469</Config>
+    <Config Name="Plex DLNA Server" Target="1900" Default="1900" Mode="udp" Description="For access to the Plex DLNA Server (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">1900</Config>
+    <Config Name="GDM network discovery" Target="32410" Default="32410" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32410</Config>
+    <Config Name="GDM network discovery" Target="32412" Default="32412" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32412</Config>
+    <Config Name="GDM network discovery" Target="32413" Default="32413" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32413</Config>
+    <Config Name="GDM network discovery" Target="32414" Default="32414" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32414</Config>
+    <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
 </Container>
