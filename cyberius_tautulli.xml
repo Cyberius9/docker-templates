@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Tautulli</Name>
+    <Repository>tautulli/tautulli</Repository>
+    <Registry>https://registry.hub.docker.com/r/tautulli/tautulli/</Registry>
+    <Network>bridge</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Cyberius9/docker-templates/issues</Support>
+    <Project>http://tautulli.com/</Project>
+    <Overview>
+  Tautulli is a 3rd party application that you can run along side your Plex Media Server to monitor activity and track various statistics.&#xD;
+  Most importantly, these statistics include what has been watched, who watched it, when and where they watched it, and how it was watched.&#xD;
+  All statistics are presented in a nice and clean interface with many tables and graphs, which makes it easy to brag about your server to everyone else.&#xD;
+  Configuration&#xD;
+  8181 - The webui for Tautulli's webui&#xD;
+  /config - Storing Configuration and the Tautulli database&#xD;
+  /logs - Map to you plex logs (required for IP logging)&#xD;
+  &#xD;
+    </Overview>
+    <Category>MediaServer:Other Tools:Utilities</Category>
+    <WebUI>http://[IP]:[PORT:8181]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/Tautulli/Tautulli-Unraid-Template/master/tautulli.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/Tautulli/Tautulli-Unraid-Template/master/img/logo-circle.png</Icon>
+    <Config Name="Host Port 8181" Target="8181" Default="8181" Mode="tcp" Description="Container Port: 8181" Type="Port" Display="always" Required="true" Mask="false">8181</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.tautulli.entrypoints" Target="traefik.http.routers.tautulli.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.tautulli.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="traefik.http.routers.tautulli.rule" Target="traefik.http.routers.tautulli.rule" Default="Host(`tautulli.example.com`)" Mode="" Description="Container Label: traefik.http.services.tautulli.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.routers.tautulli.middlewares" Target="traefik.http.routers.tautulli.middlewares" Default="secHeaders@file" Mode="" Description="Container Label: traefik.http.routers.tautulli.middlewares" Type="Label" Display="always" Required="true" Mask="false">secHeaders@file</Config>
+    <Config Name="traefik.http.services.tautulli.loadbalancer.server.port" Target="traefik.http.services.tautulli.loadbalancer.server.port" Default="8181" Mode="" Description="Container Label: traefik.http.services.tautulli.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8181</Config>
+    <Config Name="AppData Path: /config" Target="/config" Default="/mnt/user/appdata/tautulli" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tautulli</Config>
+</Container>
