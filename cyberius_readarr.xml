@@ -14,6 +14,7 @@
     <TemplateURL/>
     <Icon>https://hotio.dev/webhook-avatars/readarr.png</Icon>
     <Config Name="Host Port for 8787" Target="8787" Default="8787" Mode="tcp" Description="Container Port: 8787" Type="Port" Display="always-hide" Required="true" Mask="false">8787</Config>
+    <Config Name="Media Path" Target="/media" Default="" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false"/>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="traefik.http.routers.readarr.entrypoints" Target="traefik.http.routers.readarr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.readarr.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
     <Config Name="traefik.http.routers.readarr.rule" Target="traefik.http.routers.readarr.rule" Default="Host(`readarr.example.com`)" Mode="" Description="Container Label: traefik.http.routers.readarr.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
