@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Readarr</Name>
+    <Repository>hotio/readarr:nightly</Repository>
+    <Registry>https://hub.docker.com/r/hotio/readarr</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Cyberius9/docker-templates/issues</Support>
+    <Project>https://hotio.dev/containers/readarr</Project>
+    <Overview>Book, Magazine, Comics Ebook and Audiobook Manager and Automation (Sonarr for Ebooks). WARNING: Updates require a fresh database until further notice</Overview>
+    <Category>Downloaders: MediaApp:Books</Category>
+    <WebUI>http://[IP]:[PORT:8787]</WebUI>
+    <TemplateURL/>
+    <Icon>https://hotio.dev/webhook-avatars/readarr.png</Icon>
+    <Config Name="Host Port for 8787" Target="8787" Default="8787" Mode="tcp" Description="Container Port: 8787" Type="Port" Display="always-hide" Required="true" Mask="false">8787</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.readarr.entrypoints" Target="traefik.http.routers.readarr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.readarr.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+    <Config Name="traefik.http.routers.readarr.rule" Target="traefik.http.routers.readarr.rule" Default="Host(`readarr.example.com`)" Mode="" Description="Container Label: traefik.http.routers.readarr.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.readarr.middlewares" Target="traefik.http.routers.readarr.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.readarr.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.services.readarr.loadbalancer.server.port" Target="traefik.http.services.readarr.loadbalancer.server.port" Default="8787" Mode="" Description="Container Label: traefik.http.services.readarr.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8787</Config>
+    <Config Name="Host Path for /config" Target="/config" Default="/mnt/user/appdata/readarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/readarr</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+    <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">002</Config>
+</Container>
