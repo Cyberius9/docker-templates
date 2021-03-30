@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Lazylibrarian</Name>
+    <Repository>linuxserver/lazylibrarian</Repository>
+    <Registry>https://hub.docker.com/r/linuxserver/lazylibrarian/</Registry>
+    <Network>bridge</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/50617-support-linuxserverio-lazylibrarian/</Support>
+    <Project>https://github.com/DobyTang/LazyLibrarian/</Project>
+    <Overview>LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs.</Overview>
+    <Category>MediaApp:Books</Category>
+    <WebUI>http://[IP]:[PORT:5299]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/lazylibrarian.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/lazylibrarian-icon.png</Icon>
+    <Config Name="Host Port" Target="5299" Default="5299" Mode="tcp" Description="Container Port: 5299" Type="Port" Display="always" Required="true" Mask="false">5299</Config>
+    <Config Name="Import Location" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Library Location" Target="/books" Default="" Mode="rw" Description="MATCHES CALIBRE mapping: /books" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Manual Import Location" Target="/books_import" Default="" Mode="rw" Description="Used for manual import only: /books_import" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="CalibreMod" Target="DOCKER_MODS" Default="" Mode="" Description="Adds the ability to enable the Calibredb program for ebook conversion" Type="Variable" Display="always" Required="false" Mask="false">linuxserver/calibre-web:calibre</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/lazylibrarian" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lazylibrarian</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.lazylibrarian.entrypoints" Target="traefik.http.routers.lazylibrarian.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+    <Config Name="traefik.http.routers.lazylibrarian.rule" Target="traefik.http.routers.lazylibrarian.rule" Default="Host(`lazylibrarian.example.com`)" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.lazylibrarian.middlewares" Target="traefik.http.routers.lazylibrarian.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.lazylibrarian.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.services.lazylibrarian.loadbalancer.server.port" Target="traefik.http.services.lazylibrarian.loadbalancer.server.port" Default="8080" Mode="" Description="Container Label: traefik.http.services.lazylibrarian.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">5299</Config>
+</Container>
