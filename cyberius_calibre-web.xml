@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Calibre-web</Name>
+    <Repository>linuxserver/calibre-web</Repository>
+    <Registry>https://hub.docker.com/r/linuxserver/calibre-web/</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/71927-support-linuxserverio-calibre-web/</Support>
+    <Project>https://github.com/janeczku/calibre-web</Project>
+    <Overview>Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.&#xD;
+  &#xD;
+    [br][br]&#xD;
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+    [b]/config[/b] Where Calibre-web should store it's database[br]&#xD;
+    [b]/books[/b] Path to your calibre library metadata.db file[br]</Overview>
+    <Category>Cloud: MediaApp:Books MediaServer:Books</Category>
+    <WebUI>http://[IP]:[PORT:8083]</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/calibre-web.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/calibre-web-icon.png</Icon>
+    <Config Name="Books" Target="/books" Default="" Mode="rw" Description="Location of Calibre library " Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Webui" Target="8083" Default="8083" Mode="tcp" Description="Webui - Default 8083" Type="Port" Display="always" Required="true" Mask="false">8083</Config>
+    <Config Name="CalibreMod" Target="DOCKER_MODS" Default="" Mode="" Description="Optional - This pulls an additional Docker layer which includes the Calibre binaries necessary to perform ebook conversion.  Please see the readme on Github for more details." Type="Variable" Display="always" Required="false" Mask="false">linuxserver/calibre-web:calibre</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/disks/virtualisation/appdata/calibre-web" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"></Config>
+    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.calibre-web.entrypoints" Target="traefik.http.routers.calibre-web.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.calibre-web.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+    <Config Name="traefik.http.routers.calibre-web.rule" Target="traefik.http.routers.calibre-web.rule" Default="Host(`calibre-web.example.com`)" Mode="" Description="Container Label: traefik.http.routers.calibre-web.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.calibre-web.middlewares" Target="traefik.http.routers.calibre-web.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.calibre-web.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.services.calibre-web.loadbalancer.server.port" Target="traefik.http.services.calibre-web.loadbalancer.server.port" Default="8083" Mode="" Description="Container Label: traefik.http.services.calibre-web.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8083</Config>
+</Container>
