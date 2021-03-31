@@ -23,7 +23,8 @@
     <Config Name="GUAC_USER" Target="GUAC_USER" Default="" Mode="" Description="Username for the calibre desktop gui." Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="GUAC_PASS" Target="GUAC_PASS" Default="" Mode="" Description="Password md5 hash for the calibre desktop gui." Type="Variable" Display="always" Required="false" Mask="true"></Config>
     <Config Name="Library Location" Target="/books" Default="" Mode="rw" Description="Library Location /books" Type="Path" Display="always" Required="false" Mask="false"></Config>
-    <Config Name="Import Location" Target="/import" Default="" Mode="rw" Description="Import Location /import" Type="Path" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="Import Location" Target="/downloads" Default="" Mode="rw" Description="Import Location /downloads" Type="Path" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="CalibreMod" Target="DOCKER_MODS" Default="" Mode="" Description="Adds the ability to enable the Calibredb program for ebook conversion" Type="Variable" Display="always" Required="false" Mask="false">linuxserver/calibre-web:calibre</Config>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="traefik.http.routers.calibre.entrypoints" Target="traefik.http.routers.calibre.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.calibre.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
     <Config Name="traefik.http.routers.calibre.rule" Target="traefik.http.routers.calibre.rule" Default="Host(`calibre.example.com`)" Mode="" Description="Container Label: traefik.http.routers.calibre.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
